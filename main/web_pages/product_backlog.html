@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>Skrum Master App | Product Backlog</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+
+
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="product_backlog.html"><img src="SMA.gif" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="product_backlog.html">Product Backlog<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sprint.html">Sprint </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="team.html">Member </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="performance.html">Team Performance </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+                <button title="Create a new task for the product backlog" type="button" id="taskEditButton" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Create Task</button>
+
+                <div class="modal fade bd-example-modal-lg" id="${task.name}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>Create Task</b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Title</span>
+
+                                        </div>
+                                        <input type="text" id="titlefield" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupType">Type</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupType">
+                                            <option selected value="Story">Story</option>
+                                            <option value="Bug">Bug</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupTags">Tags</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupTags">
+                                            <option selected value="Choose...">Choose...</option>
+                                            <option value="UI">UI</option>
+                                            <option value="Testing">Testing</option>
+                                            <option value="Core">Core</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group mb-3" id ="Assignees">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text">Assignees</label>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <form>
+                                        <div class="range-wrap">
+                                            <label class="fw-bolder" for="rangeStoryPoints">Story Points: </label>
+                                            <input type="range" class="form-range" id="rangeStoryPoints" min="1" max="10" oninput="demo.value=rangeInput.value" />
+                                            <span class="range-value" id="demo"></span>
+
+                                            <!-- <input id="amount" type="number" class="fw-light" value="5" min="0" max="10" oninput="rangeInput.value=amount.value" style="text-align: center;"/> -->
+                                        </div>
+                                        <script>
+                                            var slider = document.getElementById("rangeStoryPoints");
+                                            var output = document.getElementById("demo");
+                                            output.innerHTML = slider.value;
+                                            slider.oninput = function() {
+                                                output.innerHTML = this.value;
+                                            }
+                                        </script>
+                                    </form>
+                                    <br>
+                                    <p class="fw-bolder">Priority</p>
+                                    <div class="form-check">
+                                        <div class="form-check form-check-inline" id="radioPriority">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLowPriority" value="option1">
+                                            <label for="radioLowPriority" class="form-check-label">Low</label>
+                                        </div>
+                                        <div class="form-check form-check-inline" id="radioPriority">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioMediumPriority" value="option2">
+                                            <label for="radioMediumPriority" class="form-check-label">Medium</label>
+                                        </div>
+                                        <div class="form-check form-check-inline" id="radioPriority">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioHighPriority" value="option3">
+                                            <label class="form-check-label" for="radioHighPriority">High</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="descriptionBox" class="fw-bolder">Description</label>
+                                            <textarea class="form-control" name="descriptionBox" id="descriptionBox" rows="3"></textarea>
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addTask('',
+                                    document.getElementById('titlefield').value,
+                                    document.getElementById('inputGroupType').value,
+                                    document.getElementById('inputGroupTags').value,
+                                    document.getElementById('inputAssignee').value,
+                                    document.getElementById('rangeStoryPoints').value,
+                                    document.getElementById('radioLowPriority').checked,
+                                    document.getElementById('radioMediumPriority').checked,
+                                    document.getElementById('radioHighPriority').checked,
+                                    true,false,false,
+                                    document.getElementById('descriptionBox').value,'')">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <!-- Filter button placed on top right of page -->
+    <button title="Filter card view by tags or deleted status" id="filterButton" class="btn btn-outline-primary">Filter</button>
+    <ul class="mdl-menu mdl-js-menu" for="filterButton">
+        <li class="mdl-menu__item" onclick="getFilteredCards('All')">Show All</li>
+        <li class="mdl-menu__item" onclick="getFilteredCards('UI')">UI</li>
+        <li class="mdl-menu__item" onclick="getFilteredCards('Core')">Core</li>
+        <li class="mdl-menu__item" onclick="getFilteredCards('Testing')">Testing</li>
+        <li class="mdl-menu__item" onclick="getFilteredCards('Deleted')">Deleted</li>
+    </ul>
+
+    <!-- JS for generating cards -->
+    <div class="allTaskCards" style="padding-left: 10%;"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1208.0.min.js"></script>
+    <script src="../Database/database.js"></script>
+    <script src="../src/dynamicCards.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</body>
+
+</html>

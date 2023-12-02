@@ -1,0 +1,200 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10x 90x;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(34, 193, 195, 1);
+    background: rgb(34, 193, 195);
+    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+}
+
+.graph {
+    margin-left: 25%
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center {
+    margin-left: 25%;
+}
+
+.column3 {
+    float: left;
+    width: 33.3333%;
+}
+
+.column4 {
+    float: left;
+    width: 25%;
+}
+
+.column2 {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+
+.team-headings {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.member {
+    float: right;
+    margin-right: 10%;
+}
+
+.member-list {
+    padding-top: 0%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.fw-bolder {
+    text-align: center;
+}
+
+#descriptionBox {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+}
+
+#radioPriority {
+    display: flex;
+    text-align: center;
+}
+
+.navbar-brand {
+    padding-top: 20px;
+    width: 160px;
+}
+
+#navbarSupportedContent {
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0 3em;
+    display: flex;
+}
+
+.range-wrap {
+    position: relative;
+    margin: 0 auto 3rem;
+}
+
+.form-range {
+    width: 100%;
+}
+
+.range-value {
+    color: black;
+    padding: 4px 12px;
+    padding-top: 20px;
+    float: right;
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.nav-link {
+    line-height: 80px;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#taskCard {
+    /* position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin: 1%; */
+    top: 100px;
+    margin-left: 20px;
+    vertical-align: top;
+    position: relative;
+}
+
+#sprintCard {
+    width: 90%;
+}
+
+.sprintColumn {
+    width: 28%;
+    float: left;
+    text-align: center;
+}
+
+.cardInsideColumnLeft {
+    float: left;
+    width: 40%;
+    text-align: left;
+}
+
+.cardInsideColumnRight {
+    float: left;
+    width: 60%;
+    text-align: right;
+}
+
+.card-header {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    line-height: 90%;
+}
+
+.sprint-header {
+    padding-top: 1%;
+    padding-left: 1%;
+    line-height: 90%;
+}
+
+#taskEditButton {
+    margin-right: 50px;
+    position: absolute;
+    right: 50px;
+}
+
+.sprint-column-title {
+    vertical-align: top;
+    font-weight: 500;
+}
+
+body {
+    background: #f5f1f6;
+    /* background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+}
+
+#filterButton {
+    margin-right: 50px;
+    margin-top: 20px;
+    right: 50px;
+    position: absolute;
+    float: right;
+    /* Set filter button to right hand side of screen */
+}
