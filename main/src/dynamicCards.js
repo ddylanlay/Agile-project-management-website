@@ -248,7 +248,7 @@ function getCardHTML(task, sprints, team_members) {
                                         </div>
                                     </div>
                                     <br>
-                                    
+
                                     <br>
                                     <form>
                                         <div class="form-group">
